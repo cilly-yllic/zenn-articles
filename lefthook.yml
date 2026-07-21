@@ -1,0 +1,34 @@
+pre-commit:
+  piped: true # 直列実行（priority順）。fix系 → lint系 → 空コミットガードの順で流す
+  commands:
+    prettier:
+      priority: 1
+      glob: '*.{json,jsonc,yml,yaml,js,mjs,cjs,ts}'
+      run: npx prettier --write {staged_files}
+      stage_fixed: true
+    oxlint:
+      priority: 2
+      glob: '*.{js,mjs,cjs,ts}'
+      run: npx oxlint {staged_files}
+    secretlint:
+      priority: 3
+      run: npx secretlint {staged_files}
+    textlint:
+      priority: 4
+      glob: '{articles,books}/*.md'
+      run: npx textlint {staged_files}
+    markdownlint:
+      priority: 5
+      glob: '*.md'
+      run: npx markdownlint-cli2 {staged_files}
+
+# stagedが空のときlefthookはpre-commitジョブを全てスキップするため、
+# 空コミットのガードは(空でも実行される)prepare-commit-msgで行う
+prepare-commit-msg:
+  commands:
+    block-empty-commit:
+      run: |
+        if git diff --cached --quiet; then
+          echo "ステージされた変更がありません。コミットを中断します。"
+          exit 1
+        fi

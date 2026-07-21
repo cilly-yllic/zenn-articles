@@ -1,0 +1,41 @@
+{
+  "name": "zenn-articles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preview": "zenn preview",
+    "new:article": "zenn new:article",
+    "new:book": "zenn new:book",
+    "prepare": "lefthook install",
+    "lint": "npm run lint:text && npm run lint:md && npm run lint:secret",
+    "lint:text": "textlint 'articles/**/*.md' 'books/**/*.md'",
+    "lint:md": "markdownlint-cli2 '**/*.md'",
+    "lint:secret": "secretlint '**/*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cilly-yllic/zenn-articles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cilly-yllic/zenn-articles/issues"
+  },
+  "homepage": "https://github.com/cilly-yllic/zenn-articles#readme",
+  "dependencies": {
+    "zenn-cli": "^0.5.2"
+  },
+  "devDependencies": {
+    "@secretlint/secretlint-rule-preset-recommend": "^13.0.3",
+    "lefthook": "^2.1.10",
+    "markdownlint-cli2": "^0.23.1",
+    "oxlint": "^1.74.0",
+    "prettier": "^3.9.6",
+    "secretlint": "^13.0.3",
+    "textlint": "^15.7.1",
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "config": {
+    // Zenn記事のスタイルに合わせた調整
+    "line-length": false, // 日本語記事で1行が長くなるのは許容
+    "no-inline-html": false, // Zennは一部HTMLを許容
+    "first-line-heading": false, // frontmatterで始まるため
+    "single-h1": false, // Zenn記事はH1をセクション見出しに使う慣習がある
+    "no-duplicate-heading": { "siblings_only": true },
+    "fenced-code-language": false, // 言語指定なしのコードブロックを許容
+    "no-trailing-spaces": { "br_spaces": 2 }, // 行末スペース2つの改行記法を許容
+    "no-bare-urls": false, // 素のURL行はZennのリンクカード埋め込み記法
+    "no-trailing-punctuation": false, // 見出し末尾の「。」を許容
+    "no-alt-text": false, // 取り込み記事の画像はalt無しのため許容
+    "blanks-around-lists": false, // リスト項目内の:::messageコンテナと衝突するため
+  },
+  "ignores": ["node_modules", "README.md", "scraps"], // scrapsは同期対象外のバックアップ
+}

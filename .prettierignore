@@ -1,0 +1,3 @@
+# Zenn記法(::: など)を壊す恐れがあるためMarkdownは対象外
+*.md
+package-lock.json

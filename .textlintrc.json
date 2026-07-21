@@ -1,0 +1,27 @@
+{
+  "rules": {
+    "preset-ja-technical-writing": {
+      "ja-no-mixed-period": false,
+      "no-exclamation-question-mark": false,
+      "max-kanji-continuous-len": false,
+      "ja-no-weak-phrase": false,
+      "no-doubled-joshi": false,
+      "max-ten": false,
+      "arabic-kanji-numbers": false,
+      "ja-no-redundant-expression": false,
+      "no-mix-dearu-desumasu": {
+        "preferInBody": "ですます",
+        "preferInList": "ですます"
+      },
+      "max-comma": {
+        "max": 5
+      },
+      "ja-no-successive-word": {
+        "allow": ["。"]
+      },
+      "sentence-length": {
+        "max": 200
+      }
+    }
+  }
+}
