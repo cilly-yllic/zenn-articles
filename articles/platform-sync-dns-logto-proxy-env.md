@@ -99,3 +99,5 @@ tar cf - "$src" | gpg -c --batch --yes --pinentry-mode loopback \
 代償は、ワークフローの `dispatch` 連鎖が増えることです。`apply` → proxy / env-bundle という分岐は、見通しの良さと引き換えに「どこで止まったか」を追う手間を生みます。Cloudflare・Logto・Firebase・GitHub Actions と関係者が多いぶん、失敗の切り分けも単一システムより難しくなります。
 
 それでも、env を 1 つ増やすコストが「設定に数行足して `apply` を回す」に収束したことの価値は大きいです。[前回](https://zenn.dev/cilly/articles/config-driven-gcp-provisioning)は土台を設定から払い出しました。今回はその外側 — DNS・認証・配信・env — も同じ設定に追従させました。インフラを「書いて生成するもの」に倒しきると、運用の関心事は個々の環境から、生成して同期する仕組みそのものへと移っていきます。
+
+<!-- retry -->

@@ -34,3 +34,5 @@ unsubscribe = onSnapshot(entityRef, (snap) => render(snap.data()));
 # どちらを取るか
 
 「Firestore を SoT」と「Firestore を Cache」の選択は、サービスの寿命の長さで決まります。短命なプロトタイプなら前者、長く育てる予定なら後者です。中間にいるとき、後で寄せ替えるコストは、最初から Cache として扱うコストよりずっと高くつきます。
+
+<!-- canary -->
