@@ -60,5 +60,3 @@ https://zenn.dev/cilly/articles/config-driven-gcp-provisioning
 # 締め
 
 紹介、と書きましたが、この 2 枚が示しているのは結局「どこに責務を置くか」の地図です。書き込みは SQL、読み取りは Firestore、認証はユーザーと運営で別、プロビジョニングは Terraform、デプロイは firebase CLI。境界を先に決めておくと、サービスが増えても同じ地図の上に足していけます。
-
-<!-- retry -->
