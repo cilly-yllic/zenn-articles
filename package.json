@@ -31,11 +31,19 @@
   "devDependencies": {
     "@secretlint/secretlint-rule-preset-recommend": "^13.0.3",
     "lefthook": "^2.1.10",
-    "markdownlint-cli2": "^0.23.1",
+    "markdownlint-cli2": "^0.24.0",
     "oxlint": "^1.74.0",
     "prettier": "^3.9.6",
     "secretlint": "^13.0.3",
     "textlint": "^15.7.1",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2"
+  },
+  "overrides": {
+    "markdownlint": {
+      "re2js": "~2.8.7"
+    },
+    "micromark-extension-math": {
+      "katex": "^0.18.2"
+    }
   }
 }
